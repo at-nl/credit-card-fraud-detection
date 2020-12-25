@@ -8,9 +8,12 @@ The dataset used is the [Credit Card Fraud Detection dataset from ULB](https://w
 To set up the repository:
 1. Clone the repository via HTTPS: [https://github.com/at-nl/credit-card-fraud-detection.git](https://github.com/at-nl/credit-card-fraud-detection.git)
 2. Create the environment using the `environment.yml` file by running the following line in command line:
-```$ conda env create -f environment.yml```
+
+⋅⋅⋅```$ conda env create -f environment.yml```
+
 3. Run `main.py` file using the following command:
-```$ python main.py```
+
+⋅⋅⋅```$ python main.py```
 
 ## Methodology
 The ULB dataset is famous for being highly imbalanced: 99.83% of the samples are non-fraud, while the rest of the samples are fraud. In this project, methods that deal with this imbalance are used. These methods are:
