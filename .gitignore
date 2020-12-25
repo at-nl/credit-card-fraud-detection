@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.kaggle/kaggle.json
+.vscode/settings.json
+data/creditcard.csv
