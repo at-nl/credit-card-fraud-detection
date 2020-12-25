@@ -1,4 +1,4 @@
-from typing import final
+# from typing import final
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,7 +10,7 @@ class Base:
         self.model_name = model_name
         self.scores = {}
         self.confusion_matrix = None
-    @final
+    # @final
     def score(self, y_test, method = 'f1'): #y_pred, 
         if method == 'f1':
             score = f1_score(y_test, self.y_pred)
@@ -25,12 +25,16 @@ class Base:
             self.confusion_matrix = pd.DataFrame(confusion_matrix(y_test, self.y_pred))
             print(self.confusion_matrix)
         elif method == 'all':
+            
             self.scores['F1'] = f1_score(y_test, self.y_pred)
             self.scores['Accuracy'] = accuracy_score(y_test, self.y_pred)
             self.scores['Recall'] = recall_score(y_test, self.y_pred)
             self.confusion_matrix = pd.DataFrame(confusion_matrix(y_test, self.y_pred))
+            print('Scores of model "{}":'.format(self.model_name))
             print(json.dumps(self.scores, sort_keys = True, indent = 4))
+            print('Confusion matrix of model "{}":'.format(self.model_name))
             print(self.confusion_matrix)
+            print()
         else:
             print('Cannot compute score "{}" for model "{}".'.format(method, self.model_name))
             

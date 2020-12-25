@@ -1,6 +1,9 @@
+import warnings
+warnings.filterwarnings('ignore')
 from utils import get_data, generate_df_report
 from utils.preprocess import scale,data_split,oversample,undersample,synthesize_samples
 from models.logistic import Logistic, Logistic_tuned
+from models.randomForest import RandomForest, RandomForest_tuned
 import pandas as pd
 import numpy as np
 
@@ -29,24 +32,15 @@ def main():
     # syn_X_train2, syn_y_train2 = synthesize_samples(X_train_scaled, y_train, method = 'ADASYN')
     
     
-    model1 = Logistic_tuned()
-    # model2 = Logistic()
-    # model3 = Logistic()
-    # model4 = Logistic()
+    model1 = Logistic()
     model1.fit(over_X_train, over_y_train)
-    # model2.fit(under_X_train, under_y_train)
-    # model3.fit(syn_X_train1, syn_y_train1)
-    # model4.fit(syn_X_train2, syn_y_train2)
-    
     model1.predict(X_test_scaled)
-    # model2.predict(X_test_scaled)
-    # model3.predict(X_test_scaled)
-    # model4.predict(X_test_scaled)
-    print('------------------------------------------------------------------------------')
     model1.score(y_test, method = 'all')
-    # model2.score(y_test, method = 'all')
-    # model3.score(y_test, method = 'all')
-    # model4.score(y_test, method = 'all')
+    
+    model2 = RandomForest()
+    model2.fit(over_X_train, over_y_train)
+    model2.predict(X_test_scaled)
+    model2.score(y_test, method = 'all')
 
 if __name__ == '__main__':
     main()
