@@ -4,8 +4,6 @@ from models.logistic import Logistic, Logistic_tuned
 import pandas as pd
 import numpy as np
 
-## Other functions up here
-
 def main():
     # df = get_data()
     df = pd.read_csv(r'.\data\creditcard.csv')
