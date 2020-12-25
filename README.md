@@ -17,9 +17,9 @@ To set up the repository:
 
 ## Methodology
 The ULB dataset is famous for being highly imbalanced: 99.83% of the samples are non-fraud, while the rest of the samples are fraud. In this project, methods that deal with this imbalance are used. These methods are:
-- Oversampling: Oversampling is defined as adding more copies of the minority class. Oversampling can be a good choice when there is not too much data available. However, oversampling may cause overfitting and poor generalization to the test set.
-- Undersampling: Undersamplying is defined as reducing the size of the majority class such that we end up with equal-sized classes in the data. It can be a good choice when there is abundance of data available. However, it may result in information loss and underfitting.
-- Synthetic sampling: Synthetic sampling involves generating synthetic samples of the minority class based on the existing samples in the dataset. Synthetic Minority Oversampling Technique (SMOTE) is a popular algorithm to creates sythetic observations of the minority class. ADASYN is another novel adaptive synthetic sampling approach that can be applied to the dataset for this project.
+- **Oversampling:** Oversampling is defined as adding more copies of the minority class. Oversampling can be a good choice when there is not too much data available. However, oversampling may cause overfitting and poor generalization to the test set.
+- **Undersampling:** Undersamplying is defined as reducing the size of the majority class such that we end up with equal-sized classes in the data. It can be a good choice when there is abundance of data available. However, it may result in information loss and underfitting.
+- **Synthetic sampling:** Synthetic sampling involves generating synthetic samples of the minority class based on the existing samples in the dataset. Synthetic Minority Oversampling Technique (SMOTE) is a popular algorithm to creates sythetic observations of the minority class. ADASYN is another novel adaptive synthetic sampling approach that can be applied to the dataset for this project.
 
 The workflow of the project is as follows:
 - The dataset is split into train and test sets.
